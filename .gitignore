@@ -1,0 +1,10 @@
+# MacOS
+*.DS_Store
+
+# PyCharm
+*.idea/
+
+# Data
+*.zip
+*/Data/
+*/Stacked/
