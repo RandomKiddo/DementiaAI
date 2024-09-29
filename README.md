@@ -25,6 +25,8 @@ As a part of the OSU AI Club Hack AI 2024, this project was selected by the team
 
 Although we had a good training accuracy, we had a relatively low testing accuracy (indicating overfitting). Unfortunately, due to not having access to a GPU at the hackathon, we could not GPU accelerate the model, and we did not have enough time to test a simpler model. The training accuracy was in the high 90% range, but the testing accuracy hovered around high 70%. 
 
+Although this repository is being integrated with the Hack AI 2024 repository (meaning the files here will now also be there), the older version of the model can still be found by looking back in the commits [here](https://github.com/Nishanth-Kunchala/Hack_AI_2024).
+
 ___
 
 ### This Model & Results
