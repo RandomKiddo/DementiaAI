@@ -35,44 +35,6 @@ We revisited this model to try and create a better model. We continued to use th
 
 We created a simpler Tensorflow functional model and GPU accelerated with an NVIDIA RTX 3060 to decrease training time. We added training callbacks of `ModelCheckpoint` and `EarlyStopping` to save the best possible model. We got a training accuracy of 100% (it isn't really 100%, it is being rounded) with a testing accuracy of 97.31%, indicating that our model makes much better generalizations this time around.
 
-The model we used was the following:
-
-
-Model: "model"<br>
-\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_<br>
- Layer (type)                Output Shape              Param #<br>   
-\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=<br>
- input_1 (InputLayer)        [(None, 62, 124, 61, 1)]  0<br>         
-                                                                 
- conv3d (Conv3D)             (None, 60, 122, 59, 16)   448 <br>      
-                                                                 
- max_pooling3d (MaxPooling3D  (None, 30, 61, 29, 16)   0  <br>       
- )                                                               
-                                                                 
- batch_normalization (BatchN  (None, 30, 61, 29, 16)   64  <br>      
- ormalization)                                                   
-                                                                 
- conv3d_1 (Conv3D)           (None, 28, 59, 27, 32)    13856  <br>   
-                                                                 
- max_pooling3d_1 (MaxPooling  (None, 14, 29, 13, 32)   0 <br>        
- 3D)                                                             
-                                                                 
- batch_normalization_1 (Batc  (None, 14, 29, 13, 32)   128   <br>    
- hNormalization)                                                 
-                                                                 
- global_average_pooling3d (G  (None, 32)               0    <br>     
- lobalAveragePooling3D)                                          
-                                                                 
- dense (Dense)               (None, 64)                2112  <br>    
-                                                                 
- dense_1 (Dense)             (None, 4)                 260   <br>    
-                                                                 
-\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=\=<br>
-Total params: 16,868<br>
-Trainable params: 16,772<br>
-Non-trainable params: 96<br>
-\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_<br>
-
 Loss and accuracy graphs:
 
 ![Accuracy Graph](src/accuracy.png)
